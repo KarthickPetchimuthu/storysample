@@ -1,0 +1,108 @@
+
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { BrowserModule } from "@angular/platform-browser";
+import { LoginComponent } from '../app/login/login.component';
+import { HttpClientModule } from "@angular/common/http";
+import { moduleMetadata } from "@storybook/angular";
+import { action } from '@storybook/addon-actions';
+import { linkTo } from '@storybook/addon-links';
+
+<Meta title="MDX/Login" decorators={[
+    moduleMetadata({
+        declarations: [
+            LoginComponent
+        ],
+        provider: [{}]
+    }),
+]} parameters={{
+    component: LoginComponent
+}}/>
+
+# Login Component 
+
+A login component has been created which allows the users to login by providing their credentials.
+This file contains the complete documentation of the login component. All the stories have been rendered 
+in the mobile format by default.
+
+## MDX
+
+Stotybook Docs allows you to mix stories and documentation in 
+[MDX Format](https://mdxjs.com/)
+
+MDX Combines Marksown and JSX.
+
+## ComponentMeta SB5 Equivalent
+
+This is roughly equivalent to SB5's `storiesOf` :
+
+```
+storiesOf('MDX|Login',module)
+    .addParameter({component: LoginComponent})
+
+```
+
+## Stories
+
+### Default
+
+This is the default story. In this story the users can take a look at the overall
+appearance of the login component.
+
+<Preview>
+  <Story name="Default">{{
+    component: LoginComponent,
+    props:{
+      
+    },
+    }}    
+  </Story>
+</Preview>
+
+
+### Login with wrong credentials
+
+This is the Login with wrong credentials story. In this story the user will give any one or all of the user 
+inputed value wrong or empty in the form of the login component. It will show error message in action tab of storybook.
+
+<Preview>
+  <Story name="Login with wrong credentials">{{
+    component: LoginComponent,
+    template: '<app-login (onLoginError)="errorMessage($event)"></app-login>',
+    props:{
+      errorMessage: action("Error message")
+    },
+    }}
+  </Story>
+</Preview>
+
+### Login with correct credentials
+
+This is the Login with correct credentials story. In this story the user will give correct values in the form of the login component. 
+It will redirect user to MTPL calculator story in storybook.
+
+<Preview>
+  <Story name="Login with correct credentials">{{
+    component: LoginComponent,
+    template: '<app-login (onLoginSuccess)="successMessage($event)"></app-login>',
+    props:{
+      successMessage: action("Login Successful")
+    },
+    }}
+  </Story>
+</Preview>
+
+### Login as a guest
+
+This is the Login as a guest story. In this story the user will click on login as guest user button. 
+It will redirect user to MTPL calculator story in storybook.
+
+<Preview>
+  <Story name="Login as a guest">{{
+    component: LoginComponent,
+    template: '<app-login (asGuestLogin)="successMessage($event)"></app-login>',
+    props:{
+      successMessage: action("Login as Guest")
+    },
+    }}
+  </Story>
+</Preview>

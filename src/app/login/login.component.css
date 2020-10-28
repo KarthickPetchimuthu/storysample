@@ -1,0 +1,78 @@
+.login-card-description{
+    font-family: 'Trebuchet MS',Arial,sans-serif;
+      font-weight: bold;
+      color:rgb(8,56,95);
+      font-size: 20px;
+  }
+  .login-btn {
+    padding: 10px 20px 10px;
+    background-color:rgb(9, 113, 231);
+    border-radius: 20px;
+    font-size: 15px;
+    /* font-weight: bold; */
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; 
+  }
+  .hr-text{
+    position: relative;
+    border: none;
+    height: 1px;
+    background: #999;
+  }
+  .redirect-btn{
+    padding: 10px 20px 10px;
+    background-color:rgb(8,56,95);
+    border-radius: 20px;
+    font-size: 15px;
+    /* font-weight: bold; */
+    line-height: 20px;
+    color: #fff;
+    margin-bottom: 24px; 
+  
+  }
+  .login-card-footer-text{
+    color:gray;
+  }
+  .loginimg{
+    width: 500%;
+    
+    padding-right:0%;
+    padding-left: 10%;
+  }
+  .card-body{
+    padding-top: 25%;
+  }
+  
+  .success{
+    color: green;
+  }
+  @media screen and (max-width: 450px){
+    .loginimg{
+      display:none;
+      
+    }
+    
+  }
+  
+  @media all and (min-width: 768px){
+    .card-body{
+      
+      padding-left: 25%;
+      
+    }
+    .loginimg{
+      padding-left: 0%;
+      padding-right: 10%;
+    }
+  }
+  @media all and (min-width: 1024px){
+    .card-body{
+      padding-left: 0%;
+      
+    }
+    .loginimg{
+      padding-left: 8%;
+    }
+  }
+  
